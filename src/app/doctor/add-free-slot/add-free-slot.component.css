@@ -1,0 +1,148 @@
+/* Container and layout */
+.container {
+    margin: 20px 10px 20px 100px  ;
+    padding: 20px;
+  }
+  
+  /* Header style */
+  .header h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  /* Calendar styles */
+  .calendar {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .control-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .control-button:hover {
+    color: #007bff;
+  }
+  
+  .day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .day-name {
+    text-align: center;
+  }
+  
+  /* Calendar grid styles */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .day-cell {
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .day-cell:hover {
+    transform: scale(1.05);
+  }
+  
+  .current-day {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .selected-day {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  /* Time slots styles */
+  .time-slots {
+    display: flex;
+    gap: 10px;
+  flex-wrap: wrap;
+  }
+  
+  .time-slot {
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    flex-basis: 25%;
+  }
+  
+  
+  .time-slot:hover {
+    transform: scale(1.05);
+  }
+  
+  .occupied {
+    background-color: #dc3545;
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .available {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .selected {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  /* Save button styles */
+  .save-button {
+    display: block;
+    width: 160px;
+    margin: 40px auto;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,24 @@
+<section id="section-one">
+  <div id="text">
+    <p id="services-head">Our Specializations</p>
+    <p id="services-text">
+      Comprehensive medical specialties<br> available through ClinicAccess
+    </p>
+  </div>
+  <div id="departs">
+    <div
+      class="depart"
+      *ngFor="let depart of departments; let i = index"
+    >
+      <div class="depart-image"><img src="../../../assets/images/Home/departs/depart_1.svg" /></div>
+      <div class="depart-name">
+        <p>{{ depart.name }}</p>
+        <p class="depart-number">{{ i + 1 }}</p>
+      </div>
+      <div class="depart-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod urna faucibus nunc etiam nulla aliquam.</p>
+      </div>
+    </div>
+  </div>
+  
+</section>

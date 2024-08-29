@@ -1,0 +1,143 @@
+<div id="container">
+  <div id="header">
+    <p>
+      <span id="doctor">Doctor</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+      <span id="settings">Settings</span>
+    </p>
+  </div>
+
+  <!-- Form update -->
+  <div class="settings">
+    <div class="content">
+      <p>Security Settings</p>
+      <form [formGroup]="securityForm" (ngSubmit)="submitSecurityForm()">
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Current Password"
+            formControlName="currentPassword"
+          />
+          <div class="msg" *ngIf="securityForm.get('currentPassword')?.invalid && securityForm.get('currentPassword')?.touched">
+            *Current password is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="New Password"
+            formControlName="newPassword"
+          />
+          <div class="msg" *ngIf="securityForm.get('newPassword')?.invalid && securityForm.get('newPassword')?.touched">
+            *New password is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="securityForm.invalid">Save</button>
+        </div>
+      </form>
+      <!-- Error Message Display -->
+      <div *ngIf="errorMessagePass" class="error-message">
+        {{ errorMessagePass }}
+      </div>
+    </div>
+
+    <div class="content">
+      <p>Account Settings</p>
+      <form [formGroup]="accountForm" (ngSubmit)="submitAccountForm()">
+        <div class="form-group">
+          <input type="text" placeholder="User Name" formControlName="name" />
+          <div class="msg" *ngIf="accountForm.get('name')?.invalid && accountForm.get('name')?.touched">
+            <div *ngIf="accountForm.get('name')?.errors?.['required']">
+              *Name is required.
+            </div>
+            <div *ngIf="accountForm.get('name')?.errors?.['pattern']">
+              *Name must contain only letters.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            formControlName="phoneNumber"
+          />
+          <div class="msg" *ngIf="accountForm.get('phoneNumber')?.invalid && accountForm.get('phoneNumber')?.touched">
+            <div *ngIf="accountForm.get('phoneNumber')?.errors?.['required']">
+              *Phone number is required.
+            </div>
+            <div *ngIf="accountForm.get('phoneNumber')?.errors?.['pattern']">
+              *Phone number must be valid with 12 digits.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email" formControlName="email" />
+          <div class="msg" *ngIf="accountForm.get('email')?.invalid && accountForm.get('email')?.touched">
+            <div *ngIf="accountForm.get('email')?.errors?.['required']">
+              *Email is required.
+            </div>
+            <div *ngIf="accountForm.get('email')?.errors?.['email']">
+              *Email must be valid.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="number" placeholder="Age" formControlName="age" />
+          <div class="msg" *ngIf="accountForm.get('age')?.invalid && accountForm.get('age')?.touched">
+            <div *ngIf="accountForm.get('age')?.errors?.['required']">
+              *Age is required.
+            </div>
+            <div *ngIf="accountForm.get('age')?.errors?.['pattern']">
+              *Age must be a valid number.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group gender">
+          <label id="gender-title">Gender</label>
+          <div class="form-group-inline">
+            <input
+              type="radio"
+              id="radio1"
+              formControlName="gender"
+              value="Female"
+            />
+            <label for="radio1">Female</label>
+          </div>
+          <div class="form-group-inline">
+            <input
+              type="radio"
+              id="radio2"
+              formControlName="gender"
+              value="Male"
+            />
+            <label for="radio2">Male</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="accountForm.invalid">Save</button>
+        </div>
+      </form>
+      <!-- Error Message Display -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-success-popup [isVisible]="showPopup" (close)="showPopup = false"></app-success-popup>

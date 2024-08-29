@@ -1,0 +1,35 @@
+<div class="popup-form" [ngClass]="{'show': showPopupForm}">
+    <div class="popup-content">
+      <span class="close" (click)="closePopupForm()">&times;</span>
+      <h4>Update Appointment</h4>
+      <form [formGroup]="BookForm" (ngSubmit)="onSubmit()">
+
+     <!-- Select Doctor -->
+     <div class="form-group">
+        <label for="doctor">Select Doctor</label>
+        <select id="doctor" formControlName="doctor" (change)="onDoctorChange()">
+          <option *ngFor="let doctor of doctors" [value]="doctor._id">
+            {{ doctor.name }} 
+          </option>
+        </select>
+      </div>
+
+      <!-- Slots Table -->
+      <div class="form-group">
+        <label for="slot">Select Slot</label>
+        <select id="slot" formControlName="slot">
+          <option *ngFor="let slot of slots" [value]="slot._id">
+            {{ slot.time }} {{slot.date | date }}
+          </option>
+        </select>
+      </div>
+      
+  
+        <div class="button-group">
+          <button type="submit">Update</button>
+          <button type="button" (click)="cancelUpdate()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

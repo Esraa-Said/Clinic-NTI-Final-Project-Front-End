@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="header">
+      <h1>Choose Your Free Slots</h1>
+    </div>
+  
+    <div class="main-content">
+      <div class="calendar">
+        <div class="calendar-controls">
+          <button (click)="prevMonth()" class="control-button">&#10094;</button>
+          <span>{{ currentMonth }} {{ currentYear }}</span>
+          <button (click)="nextMonth()" class="control-button">&#10095;</button>
+        </div>
+        <div class="calendar-body">
+          <div class="day-names">
+            <div *ngFor="let day of dayNames" class="day-name">{{ day }}</div>
+          </div>
+          <div class="calendar-grid">
+            <div
+              *ngFor="let day of calendarDays"
+              [ngClass]="{
+                'current-day': day.isToday,
+                'selected-day': day.isSelected
+              }"
+              (click)="selectDay(day)"
+              class="day-cell"
+            >
+              {{ day.date }}
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="time-slots">
+        <div 
+          *ngFor="let slot of timeSlots" 
+          [ngClass]="{
+            'occupied': slot.occupied, 
+            'available': !slot.occupied, 
+            'selected': slot.selected
+          }"
+          (click)="selectSlot(slot)"
+          class="time-slot"
+        >
+          {{ slot.time }}
+        </div>
+      </div>
+    </div>
+  
+    <button class="save-button" (click)="saveSelectedSlots()">Save Slots</button>
+  </div>
+  

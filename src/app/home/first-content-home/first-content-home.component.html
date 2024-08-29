@@ -1,0 +1,152 @@
+<section id="section-one" class="fade-in">
+  <div id="text">
+    <h1>Find Best Doctor <br />Your Health, Our Priority</h1>
+    <p>
+      Trust our dedicated doctors for comprehensive care,<br />
+      whether you need a routine check-up, preventative measures,<br />
+      or treatment for acute and chronic conditions.
+    </p>
+    <div id="search-doctor">
+      <input
+        type="text"
+        name="doctor"
+        placeholder="Doctor name..."
+        [(ngModel)]="doctorName"
+        required
+      />
+      <button type="button" (click)="DisplayDoctorProfile()">Search</button>
+    </div>
+  </div>
+  <div id="image-one">
+    <img src="../../../assets/images/Home/first-home/testpa.svg" />
+  </div>
+</section>
+
+<section id="section-two">
+  <div id="text">
+    <p id="services-head">Our Specializations</p>
+    <p id="services-text">
+      Comprehensive medical specialties<br> available through ClinicAccess
+    </p>
+  </div>
+  <div id="departs">
+    <div
+      class="depart"
+      *ngFor="let depart of departments | slice : 0 : 4; let i = index"
+    >
+      <div class="depart-image"><img src="../../../assets/images/Home/departs/depart_1.svg" /></div>
+      <div class="depart-name">
+        <p>{{ depart.name }}</p>
+        <p class="depart-number">{{ i + 1 }}</p>
+      </div>
+      <div class="depart-text">
+        <p>{{ depart.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="browse">
+    <button (click)="goDepartments()">Browse More Specializations</button>
+  </div>
+</section>
+
+<section id="section-three">
+  <div id="section-three-text">
+    <div id="first-paragraph">
+      <p id="features-head">Our Features</p>
+      <p id="features-text-one">
+        Explore Features Deleniti, esse. Sequi sed aliquam odit aspernatur
+      </p>
+      <p id="features-text-two">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+        Posuere dignissim aliquam interdum id tincidunt sed vitae lom elementum
+        sapien. In amet sapien.
+      </p>
+    </div>
+    <div id="second-paragraph">
+      <div class="paragragh">
+        <div class="correct">
+          <img src="../../../assets/images/Home/first-home/correct-sign.svg" />
+        </div>
+        <div class="correct-text">
+          <p>24/7 Medical Consultation</p>
+        </div>
+      </div>
+      <div class="paragragh">
+        <div class="correct">
+          <img src="../../../assets/images/Home/first-home/correct-sign.svg" />
+        </div>
+        <div class="correct-text">
+          <p>Ongoing Healthcare Help & Support</p>
+        </div>
+      </div>
+      <div class="paragragh">
+        <div class="correct">
+          <img src="../../../assets/images/Home/first-home/correct-sign.svg" />
+        </div>
+        <div class="correct-text">
+          <p>Doctors Experts in the Industry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section-three-image">
+    <img src="../../../assets/images/Home/first-home/image-3.svg" />
+  </div>
+</section>
+
+<section id="section-four">
+  <div id="section-four-image">
+    <img src="../../../assets/images/Home/first-home/image-4.svg" />
+  </div>
+  <div id="section-four-text">
+    <div id="section-four-text-without-back">
+    <p id="mission-head">Our Mission</p>
+    <p id="mission-text-one">
+      Our mission is to make healthcare more accessible
+    </p>
+    <p id="mission-text-two">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+      Posuere dignissim aliquam interdum id tincidunt sed vitae elementum
+      sapien. In amet sapien feugiat massa velit.
+    </p>
+    <p id="about">
+      <button (click)="goAboutUs()">About ClinicAccess</button>
+
+    </p>
+  </div>
+    <div id="section-four-back-image">
+      <img src="../../../assets/images/Home/first-home/background.svg" />
+    </div>
+  </div>
+</section>
+
+
+<section id="section-five">
+  <div id="text">
+    <p id="doctors-head">Our Doctors</p>
+    <p id="doctors-text">
+      Exceptional doctors providing immediate,<br />
+      efficient care, emergency treatments.
+    </p>
+  </div>
+  <div id="doctors">
+    <div
+      class="doctor"
+      *ngFor="let doctor of doctors | slice : 0 : 4; let i = index"
+      (click) = "goToDoctorProfileId(doctor._id)"
+    >
+      <div class="doctor-image"><img [src]= "doctor.photo" /></div>
+      <div class="doctor-name">
+        <p>{{ doctor.name }}</p>
+        <p class="doctor-number">{{ i + 1 }}</p>
+      </div>
+      <div class="doctor-text">
+        <p>{{ doctor.department.name }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="browse">
+    <button (click)="goDoctors()">Browse More Doctors</button>
+  </div>
+</section>

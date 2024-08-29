@@ -1,0 +1,47 @@
+<section class="section-one" *ngIf="doctor && Found">
+  <div class="section-one">
+    <div id="back-image-one">
+      <img src="../../../assets/images/Home/doctors/back_1.svg" />
+    </div>
+    <div id="doctor-content">
+      <div id="doctor-image">
+        <img [src]="doctor.photo" />
+      </div>
+      <div id="doctor-text">
+        <div id="doctor-name">
+          <p>{{ doctor.name }}</p>
+        </div>
+        <div id="doctor-depart">
+          <p>{{ doctor.department.name }}</p>
+        </div>
+        <div id="doctor-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+            Euismod urna faucibus nunc etiam nulla aliquam.
+          </p>
+        </div>
+        <div id="icons">
+          <div>
+            <img src="../../../assets/images/Home/doctors/telphone-icon.svg" />
+            <img src="../../../assets/images/Home/doctors/mail-icon.svg" />
+          </div>
+          <div id="book">
+            <button (click)="sign()">Book An Appointment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="back-image-two">
+      <img src="../../../assets/images/Home/doctors/back_2.svg" />
+    </div>
+  </div>
+</section>
+
+<section id="section-not-found" *ngIf="!Found">
+  <div id="not-found-img">
+    <img src="../../../assets/images/404.jpg" />
+  </div>
+  <div id="not-found-text">
+    <h1>Doctor Not Found!</h1>
+  </div>
+</section>

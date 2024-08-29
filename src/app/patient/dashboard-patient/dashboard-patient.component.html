@@ -1,0 +1,76 @@
+<div id="container">
+  <div id="header">
+    <p>
+      <span id="patient"> Patient</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+      <span id="dashboard">Dashboard</span>
+    </p>
+  </div>
+
+  <!-- Message Welcome -->
+  <div id="welcome-message">
+    <div id="image">
+      <img src="../../../assets/images/patient/messageDashboard.png" />
+    </div>
+    <div id="text">
+      <p id="welcome">Welcome back</p>
+      <p id="patient-name">{{ userData.name }}</p>
+      <p id="message">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque
+        assumenda illo sit explicabo expedita quia, delectus maiores molestiae
+        vitae quasi accusantium quos iusto, alias sint maxime suscipit natus
+        sequi!
+      </p>
+    </div>
+  </div>
+
+  <!-- Patient information -->
+  <div id="info">
+    <div id="blood">
+      <div class="info-image">
+        <img src="../../../assets/images/patient/blood.png" />
+      </div>
+      <div class="info-title">
+        <p>Blood Pressure</p>
+      </div>
+      <div class="info-value">
+        <p>110/70</p>
+      </div>
+    </div>
+    <div id="glucose">
+      <div class="info-image">
+        <img src="../../../assets/images/patient/glucose.png" />
+      </div>
+      <div class="info-title">
+        <p>Glucose Level</p>
+      </div>
+      <div class="info-value">
+        <p>88-75</p>
+      </div>
+    </div>
+    <div id="blood-count">
+      <div class="info-image">
+        <img src="../../../assets/images/patient/count.png" />
+      </div>
+      <div class="info-title">
+        <p>Blood Count</p>
+      </div>
+      <div class="info-value">
+        <p>9,456/mL</p>
+      </div>
+    </div>
+  </div>
+</div>

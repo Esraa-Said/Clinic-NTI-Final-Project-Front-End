@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100%);
+  z-index: 1000;
+  color: rgb(31, 31, 95);
+  height: 80px;
+  padding: 0 20px;
+}
+
+header.scrolled {
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#title div img {
+  width: 30px;
+  height: 30px;
+  margin-top: -7px;
+}
+
+#options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 35px;
+  flex-basis: calc(71% - 10px);
+
+}
+
+#options p, #options button {
+  cursor: pointer;
+}
+
+#options p:hover, #options button:hover {
+  color: rgb(0, 136, 255);
+}
+.active{
+  color: rgb(0, 136, 255);
+
+}
+
+#menu-icon {
+  cursor: pointer;
+  font-size: 28px;
+  background-color: rgb(251, 110, 103);
+  border-radius: 50%;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  color: #fff;
+  display: none; 
+  margin-right: 30px;
+}
+
+#subscribe, #subscribe-one {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgb(251, 110, 103);
+  cursor: pointer;
+  display: block; 
+ 
+}
+#subscribe{
+  margin-left: auto; 
+}
+#subscribe:hover , #subscribe-one:hover{
+  transform: rotateY(45deg);
+}
+
+@media (max-width: 1200px) {
+  header{
+    justify-content: space-between;
+  }
+  #menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #options {
+    display: none; 
+  }
+
+  #options.show {
+    display: flex; 
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #fff;
+    padding-top: 60px;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #subscribe {
+    display: none; 
+  }
+}

@@ -1,0 +1,63 @@
+<header [ngClass]="{ scrolled: isScrolled }">
+  <div id="title">
+    <div>
+      <img src="../../../assets/images/clinicIcon.png">  
+    </div>
+    <div>
+      <p>ClinicAccess</p>
+    </div>
+  </div>
+
+  <div id="options" [ngClass]="{ show: menuOpen }">
+    <p
+      routerLink="/Home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </p>
+    <p
+      routerLink="/Home/Doctors"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Doctors
+    </p>
+   
+    <p
+      routerLink="/Home/Departments"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Departments
+    </p>
+    <p
+      routerLink="/Home/AboutUs"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      About Us
+    </p>
+    <p
+    id="subscribe-one"
+    routerLink="/Home/Sign"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }" 
+*ngIf="menuOpen"
+    >
+    Subscribe
+  </p>
+  </div>
+  <div>
+    <button
+      id="subscribe"
+      routerLink="/Home/Sign"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+   
+    >
+      Subscribe
+    </button>
+  </div>
+  <div id="menu-icon" (click)="toggleMenu()">&#9776;</div>
+</header>

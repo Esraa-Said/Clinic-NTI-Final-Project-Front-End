@@ -1,0 +1,62 @@
+<div id="container">
+    <div id="header">
+      <p>
+        <span id="doctor">Doctor</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-1 icons">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+        </svg>
+        <span id="dashboard">Dashboard</span>
+      </p>
+    </div>
+  
+    <!-- Message Welcome -->
+    <div id="welcome-message">
+      <div id="image">
+        <img src="../../../assets/images/patient/messageDashboard.png" alt="Doctor illustration"/>
+      </div>
+      <div id="text">
+        <p id="welcome">Welcome back</p>
+        <p id="doctor-name">{{userData.name}}</p>
+        <p id="message">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque
+          assumenda illo sit explicabo expedita quia, delectus maiores molestiae
+          vitae quasi accusantium quos iusto, alias sint maxime suscipit natus
+          sequi!
+        </p>
+      </div>
+    </div>
+  
+    <!-- Patient information -->
+    <div id="info">
+    
+  
+      <div id="appointments">
+        <div class="info-title">
+          <p>Appointments</p>
+        </div>
+        <div class="second-row">
+          <div class="info-image">
+            <img src="../../../assets/images/doctor/schedule.png" alt="Appointment icon"/>
+          </div>
+          <div class="info-value">
+            <p>{{appointmentsCount}}</p>
+          </div>
+        </div>
+      </div>
+  
+      <div id="operations">
+        <div class="info-title">
+          <p>Operations</p>
+        </div>
+        <div class="second-row">
+          <div class="info-image">
+            <img src="../../../assets/images/doctor/clamp.png" alt="Operations icon"/>
+          </div>
+          <div class="info-value">
+            <p>{{value}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

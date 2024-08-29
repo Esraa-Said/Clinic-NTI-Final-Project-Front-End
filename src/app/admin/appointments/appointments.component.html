@@ -1,0 +1,93 @@
+<div id="container">
+  <div id="header">
+    <p>
+      <span id="admin"> Admin</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+      <span id="apponitments">Appointments</span>
+    </p>
+  </div>
+
+  <!-- Table -->
+  <div id="table" class="doctor-content">
+    <table>
+      <thead>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of pagedAppointments; let i = index">
+          <td>{{ appointment.patientId.name }}</td>
+          <td>{{ appointment.doctorId.name }}</td>
+          <td>{{ appointment.date | date }}</td>
+          <td>{{ appointment.time }}</td>
+          <td
+            [ngClass]="{
+              'status-Scheduled': appointment.status === 'Scheduled',
+              'status-confirmed': appointment.status === 'Confirmed',
+              'status-canceled': appointment.status === 'Canceled'
+            }"
+          >
+            {{ appointment.status }}
+          </td>
+
+         
+        </tr>
+      </tbody>
+    </table>
+
+    
+  </div>
+
+  <footer>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        />
+      </svg>
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+    </button>
+  </footer>
+</div>

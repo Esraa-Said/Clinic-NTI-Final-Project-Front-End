@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+}
+
+/* Sidebar Styling */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 10px);
+  z-index: 1000;
+  overflow: hidden; 
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+#sidebar.hidden {
+  transform: translateX(-100%); 
+}
+#sidebar::-webkit-scrollbar {
+  width: 0px; 
+  background: transparent; 
+}
+
+#sidebar {
+  overflow-y: scroll; 
+}
+
+
+#profile {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+ margin-left: -30px; 
+}
+
+#profile img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+#profile p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.menu-items {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 19px;
+  margin-left: -10px;
+  margin-right: 10px;
+  transition: font-weight 0.3s ease, color 0.3s ease,
+    text-shadow 0.3s ease background-color 0.3s ease;
+}
+
+.menu-items:hover {
+  background-color: rgb(240, 243, 252);
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.menu-items p,
+#menu p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.menu-items-items {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.menu-items-items div {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.menu-items-items div:hover {
+  background-color: rgb(240, 243, 252);
+}
+
+.plus {
+  position: absolute;
+  right: 50px;
+  font-size: 22px !important;
+  transition: transform 0.3s ease;
+}
+
+.plus.rotate {
+  transform: rotate(180deg);
+}
+
+#appointments.appointmentsClicked {
+  font-weight: 550;
+  color: #007bff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.active {
+  font-weight: 550;
+  color: #007bff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}

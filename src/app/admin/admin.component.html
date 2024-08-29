@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  <div class="content-area" [ngClass]="{ 'content-expanded': !isSidebarVisible }">
+    <!-- variable content -->
+    <router-outlet></router-outlet>
+    <!--  -->
+  </div>
+</div>
+

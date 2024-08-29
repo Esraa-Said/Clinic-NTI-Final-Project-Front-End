@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#container {
+  background-color: rgb(240, 243, 252);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 50px;
+  margin: 30px;
+  border-radius: 10px;
+}
+.msg,
+.error-message {
+  font-size: x-small;
+  color: red;
+}
+.msg{
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+#header p {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+}
+
+#patient {
+  font-size: 19px;
+  color: rgb(64, 69, 75);
+  font-weight: 550;
+}
+
+#settings {
+  color: rgb(64, 69, 75);
+}
+
+/* security settings */
+.settings {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+form {
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+
+
+.settings .content p {
+  color: rgb(64, 69, 75);
+  margin-bottom: 20px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 15px 10px 15px; 
+  background-color: rgb(103, 119, 240);
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  margin-left: 20px;
+}
+button:hover:not(:disabled) {
+  background-color: rgb(95, 111, 228);
+  transform: translateY(-2px);
+
+}
+
+button:disabled{
+  background-color: #ddd;
+}
+input:focus
+ {
+  border-color: #007bff;
+  outline: none;
+}
+
+.gender {
+  display: flex;
+  flex-basis: calc(100% - 10px);
+}
+
+.gender #gender-title{
+    margin-right: 20px;
+    justify-content: flex-start;
+}
+.gender  label  {
+  font-size:17px ;
+  
+}
+
+.gender input{
+  height: 20px;
+}
+.form-group-inline{
+display: flex;
+gap: 20px;
+margin-right: 20px;
+}

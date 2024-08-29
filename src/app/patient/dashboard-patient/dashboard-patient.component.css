@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#container {
+  background-color: rgb(240, 243, 252);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 50px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+#header p {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+}
+
+#patient {
+  font-size: 19px;
+  color: rgb(64, 69, 75);
+  font-weight: 550;
+}
+
+#dashboard {
+  color: rgb(64, 69, 75);
+}
+
+/* Message */
+#welcome-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 30px;
+  gap: 20px;
+}
+
+#image {
+  flex: 2;
+}
+
+#image img {
+  width: 100%;
+  height: auto;
+}
+
+#text {
+  flex: 3;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#welcome {
+  font-size: 16px;
+  color: rgb(64, 69, 75);
+  font-weight: 550;
+}
+
+#patient-name {
+  text-transform: capitalize;
+  color: rgb(39, 149, 238);
+  font-weight: 550;
+  font-size: 19px;
+}
+
+#message {
+  color: rgb(64, 69, 75);
+  line-height: 25px;
+}
+
+/* Patient Information */
+#info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+#blood,
+#glucose,
+#blood-count {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  padding: 50px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.info-title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(64, 69, 75);
+}
+
+.info-value {
+  color: green;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+  #welcome-message {
+    flex-direction: column;
+  }
+  #info {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 801px) {
+  #blood,
+  #glucose,
+  #blood-count {
+    flex-direction: column;
+  }
+}

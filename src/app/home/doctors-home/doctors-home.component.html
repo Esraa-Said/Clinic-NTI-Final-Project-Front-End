@@ -1,0 +1,30 @@
+<section id="section-one">
+  <div id="text">
+    <span>Our Doctors</span>
+    <p>The team of great doctors <br />behind Hospital</p>
+  </div>
+ 
+</section>
+
+<section id="section-two">
+  <div
+    *ngFor="let doctor of doctors; let i = index"
+    class="doctor"
+    (click)="DisplayDoctorProfile(i)"
+  >
+    <div class="doctor-image">
+      <img [src]= "doctor.photo" />
+        </div>
+    <div class="doctor-text">
+      <div class="doctor-name">
+        <p>{{ doctor.name }}</p>
+      </div>
+      <div class="doctor-department">
+        <p>{{ doctor.department.name }}</p>
+      </div>
+      <div class="doctor-desc">
+        <p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+</section>

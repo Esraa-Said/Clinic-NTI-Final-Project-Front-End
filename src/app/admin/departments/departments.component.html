@@ -1,0 +1,78 @@
+<div id="container">
+  <div id="header">
+    <p>
+      <span id="admin"> Admin</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+      <span id="doctor">Departments</span>
+    </p>
+    <button (click)="addNewDepartment()">add department</button>
+
+  </div>
+
+  <!-- Table -->
+  <div id="table" class="doctor-content">
+    <table>
+      <thead>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let department of pagedDepartments; let i = index">
+          <td><img [src]="department.photo" /></td>
+          <td>{{ department.name }}</td>
+          <td>{{ department.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        />
+      </svg>
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-1 icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+    </button>
+  </footer>
+</div>

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#section-one {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 10px;
+  position: relative;
+}
+#section-one #text {
+ padding-left: 100px;
+ padding-right: 100px;
+}
+
+#section-one #text #services-head {
+  font-size: 28px;
+  color: #4b80fb;
+}
+#section-one #text #services-text {
+  font-size: 48px;
+  color: rgb(31, 31, 95);
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 50px;
+}
+
+#section-one #departs {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#section-one #departs .depart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: calc(30% - 20px);
+  background-color: #fff;
+  border: 0.5px solid rgb(242, 242, 244);
+  border-radius: 20px;
+  padding: 20px;
+  height: 450px;
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 6px 6px rgba(0, 0, 0, 0.04);
+}
+
+#section-one #departs .depart .depart-image {
+  background-color: rgb(237, 241, 250);
+  width: 100px;
+  border-radius: 20px;
+}
+#section-one #departs .depart .depart-image img {
+  width: 100%;
+  padding: 10px;
+}
+#section-one #departs .depart .depart-name {
+  margin-top: 20px;
+  color: rgb(31, 31, 95);
+  font-weight: bold;
+  font-size: 28px;
+  border-bottom: 0.5px solid rgb(242, 242, 244);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.depart-number {
+  color: #4b80fb;
+}
+#section-one #departs .depart .depart-text {
+  margin-top: 20px;
+  color: rgb(113, 113, 127);
+  font-size: 19px;
+  padding: 10px;
+  line-height: 30px;
+}
+
+
+@media (max-width: 800px) {
+  #section-one #departs .depart {
+    flex-basis: calc(95% - 20px);
+  }
+  #section-one #text{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1200px) and (min-width:800px){
+  #section-one #departs .depart {
+    flex-basis: calc(45% - 20px); 
+   }
+    #section-one #text{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+}

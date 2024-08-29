@@ -1,0 +1,174 @@
+<div id="header">
+  <span id="admin"> Admin</span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="size-6 icons"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+    />
+  </svg>
+  <span id="doctor">Doctor</span>
+</div>
+
+<section>
+  <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+    
+    
+    
+    
+    <!-- Image Upload -->
+    <div style="text-align: center">
+      <label for="image" class="image-upload" style="font-size: 16px">
+        <input
+          id="image"
+          type="file"
+          (change)="onFileSelected($event)"
+          formControlName="photo"
+        />
+        <div class="upload-circle">
+          <span class="plus-sign">+</span>
+        </div>
+        Click to upload doctor image
+      </label>
+      <div
+        class="msg"
+        *ngIf="
+          doctorForm.get('photo')?.invalid && doctorForm.get('photo')?.touched
+        "
+      >
+        <div *ngIf="doctorForm.get('photo')?.errors?.['required']">
+          *Image is required.
+        </div>
+      </div>
+      <div
+        class="msg"
+        *ngIf="!fileValid"
+      >
+        *Only image files (png, jpeg) are allowed.
+      </div>
+    </div>
+
+    <!-- Form Fields -->
+    <div>
+      <label for="fname"> Doctor Name </label>
+      <input
+        id="fname"
+        type="text"
+        placeholder="Doctor Name..."
+        formControlName="username"
+      />
+      <div
+        class="msg"
+        *ngIf="
+          doctorForm.get('username')?.invalid &&
+          doctorForm.get('username')?.touched
+        "
+      >
+        <div *ngIf="doctorForm.get('username')?.errors?.['required']">
+          *Doctor Name is required.
+        </div>
+        <div *ngIf="doctorForm.get('username')?.errors?.['pattern']">
+          *Doctor Name must contain only letters.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="fname"> Doctor Age </label>
+      <input
+        id="fname"
+        type="number"
+        placeholder="Doctor Age..."
+        formControlName="age"
+      />
+      <div
+        class="msg"
+        *ngIf="
+          doctorForm.get('age')?.invalid &&
+          doctorForm.get('age')?.touched
+        "
+      >
+        <div *ngIf="doctorForm.get('age')?.errors?.['required']">
+          *Age is required.
+        </div>
+        <div *ngIf="doctorForm.get('age')?.errors?.['pattern']">
+          *Age must be a valid number.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="gender"> Gender </label>
+      <select id="gender" formControlName="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+    <div>
+      <label for="email"> Email </label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Email..."
+        formControlName="email"
+      />
+      <div
+        class="msg"
+        *ngIf="
+          doctorForm.get('email')?.invalid && doctorForm.get('email')?.touched
+        "
+      >
+        <div *ngIf="doctorForm.get('email')?.errors?.['required']">
+          *Email is required.
+        </div>
+        <div *ngIf="doctorForm.get('email')?.errors?.['email']">
+          *Email must be valid.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="phone"> Phone no. </label>
+      <input
+        id="phone"
+        type="text"
+        placeholder="20 1234567890"
+        formControlName="phone"
+      />
+      <div
+        class="msg"
+        *ngIf="
+          doctorForm.get('phone')?.invalid && doctorForm.get('phone')?.touched
+        "
+      >
+        <div *ngIf="doctorForm.get('phone')?.errors?.['required']">
+          *Phone is required.
+        </div>
+        <div *ngIf="doctorForm.get('phone')?.errors?.['pattern']">
+          *Phone must be valid with 12 digits.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="department"> Department </label>
+      <select id="department" formControlName="department">
+        <option *ngFor="let depart of departments" [value]="depart.name">
+          {{ depart.name }}
+        </option>
+      </select>
+    </div>
+<!-- Error Messages Section -->
+<div class="error-messages" *ngIf="getErrorMessageKeys().length > 0">
+  <div *ngFor="let key of getErrorMessageKeys()">
+    {{ errorMessages[key] }}
+  </div>
+</div>
+    <button type="submit" [disabled]="doctorForm.invalid">Add Doctor</button>
+  </form>
+</section>
+
+<app-success-popup [isVisible]="showPopup"></app-success-popup>

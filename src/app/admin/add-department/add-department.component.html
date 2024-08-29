@@ -1,0 +1,43 @@
+
+<div class="add-department-container">
+    <form [formGroup]="addDepartmentForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="name">Department Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          [ngClass]="{ 'is-invalid': addDepartmentForm.get('name')?.invalid && addDepartmentForm.get('name')?.touched }"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          [ngClass]="{ 'is-invalid': addDepartmentForm.get('description')?.invalid && addDepartmentForm.get('description')?.touched }"
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="photo">Photo</label>
+        <input id="photo" type="file" (change)="onFileSelected($event)" />
+        <div *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Image Preview" />
+        </div>
+        <div *ngIf="addDepartmentForm.get('photo')?.errors">
+          <span class="error-message">Please select a PNG or JPEG image.</span>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="addDepartmentForm.invalid">
+        Add Department
+      </button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+  
+  <app-success-popup [isVisible]="showPopup"></app-success-popup>

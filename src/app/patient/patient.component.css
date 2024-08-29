@@ -1,0 +1,35 @@
+* {
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.3s ease;
+  }
+   
+  .content-area {
+    flex: 1;
+    margin-left: 300px;
+    transition: margin-left 0.3s ease;
+    margin-top: 60px;
+    z-index: 1;
+
+  }
+  app-sidebar-patient{
+    z-index: 2;
+  }
+  .content-expanded {
+    margin-left: 0; 
+ 
+  }
+  
+  @media (max-width: 900px) {
+    
+    .content-expanded {
+      margin-left: 0; 
+    }
+    
+  }
+  

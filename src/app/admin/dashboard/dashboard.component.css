@@ -1,0 +1,95 @@
+/* Header */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#container {
+  background-color: rgb(240, 243, 252);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 50px;
+  margin: 50px ;
+  border-radius: 10px;
+}
+
+#header p {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+}
+
+#admin {
+  font-size: 19px;
+  color: rgb(64, 69, 75);
+  font-weight: 550;
+}
+
+#dashboard {
+  color: rgb(64, 69, 75);
+}
+
+
+section {
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.box {
+  flex-basis: 30%;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 5px 5px 10px rgba(150, 150, 150, 0.2);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.box .box-image img {
+  width: 30px;
+  height: 30px;
+}
+.box .box-image {
+  background-color: rgb(238, 244, 251);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.box .value {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(64, 69, 75);
+
+}
+.box .key {
+  color: rgb(64, 69, 75);
+}
+
+@media (max-width: 1000px) {
+  .box {
+    flex-basis: calc(80% - 20px) ;
+  }
+}
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .box {
+    flex-basis: calc(50% - 20px);
+  }
+}

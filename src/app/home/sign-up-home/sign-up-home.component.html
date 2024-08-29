@@ -1,0 +1,222 @@
+<div class="body">
+  <section id="section-one">
+    <!-- <div id="image">
+      <img src="../../../assets/images/Home/image.png" />
+    </div> -->
+
+    <div class="form-container">
+      
+      <h2>Join Us</h2>
+
+      <form [formGroup]="signUpForm" class="form" (ngSubmit)="submitForm()">
+        <!-- Name input -->
+        <div class="form-group">
+          <label for="username">User Name</label>
+          <input
+            type="text"
+            placeholder="User Name"
+            formControlName="name"
+          />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('name')?.invalid &&
+              signUpForm.get('name')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('name')?.errors?.['required']">
+              *username is required
+            </div>
+            <div *ngIf="signUpForm.get('name')?.errors?.['minlength']">
+              *username length must be 3 or more characters
+            </div>
+          </div>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Email" formControlName="email" />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('email')?.invalid &&
+              signUpForm.get('email')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('email')?.errors?.['required']">
+              *email is required
+            </div>
+            <div *ngIf="signUpForm.get('email')?.errors?.['email']">
+              *email must be valid
+            </div>
+          </div>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('password')?.invalid &&
+              signUpForm.get('password')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('password')?.errors?.['required']">
+              *password is required
+            </div>
+            <div
+              *ngIf="signUpForm.get('password')?.errors?.['passwordStrength']"
+            >
+              *password must be strong
+            </div>
+          </div>
+        </div>
+
+        <!-- Password Confirm input -->
+        <div class="form-group">
+          <label for="password">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Re-type Password"
+            formControlName="retypePassword"
+            [ngClass]="{
+              'ng-invalid':
+                signUpForm.hasError('passwordMismatch') &&
+                signUpForm.get('retypePassword')?.touched
+            }"
+          />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('retypePassword')?.invalid &&
+              signUpForm.get('retypePassword')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('retypePassword')?.errors?.['required']">
+              *retypePassword is required
+            </div>
+          </div>
+          <div
+            class="msg"
+            *ngIf="signUpForm.errors?.['passwordMismatch'] && signUpForm.get('retypePassword')?.touched "
+          >
+            *retyped password not match password
+          </div>
+        </div>
+
+        <!-- Age input -->
+        <div class="form-group">
+          <label for="number">Age</label>
+          <input type="number" placeholder="Age" formControlName="age" />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('age')?.invalid && signUpForm.get('age')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('age')?.errors?.['required']">
+              *age is required
+            </div>
+            <div *ngIf="signUpForm.get('age')?.errors?.['pattern']">
+              *age must be valid number
+            </div>
+          </div>
+        </div>
+
+        <!-- phone input -->
+        <div class="form-group">
+          <label for="tel">Phone No.</label>
+          <input type="tel" placeholder="Phone No." formControlName="phoneNumber" />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('phoneNumber')?.invalid &&
+              signUpForm.get('phoneNumber')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('phoneNumber')?.errors?.['required']">
+              *phone is required
+            </div>
+            <div *ngIf="signUpForm.get('phoneNumber')?.errors?.['pattern']">
+              *phone must be valid number with 12 digit
+            </div>
+          </div>
+        </div>
+
+        <!-- Date Input -->
+        <!-- <div class="form-group">
+          <label for="date">Birth Date</label>
+          <input type="date" formControlName="dateOfBirth" />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('dateOfBirth')?.invalid &&
+              signUpForm.get('dateOfBirth')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('dateOfBirth')?.errors?.['required']">
+              *date of birth is required
+            </div>
+          </div>
+        </div> -->
+
+        <!-- photo -->
+        <div class="form-group" id="form-image">
+          <label for="file">Your Image</label>
+          <input type="file" (change)="onFileSelected($event)" />
+          <div
+            class="msg"
+            *ngIf="
+              signUpForm.get('photo')?.invalid &&
+              signUpForm.get('photo')?.touched
+            "
+          >
+            <div *ngIf="signUpForm.get('photo')?.errors?.['required']">
+              *image is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender Buttons -->
+        <div class="form-group gender">
+          <label id="gender-title">Gender</label>
+          <div class="form-group-inline">
+            <input
+              type="radio"
+              id="radio1"
+              formControlName="gender"
+              value="Female"
+            />
+            <label for="radio1">Female</label>
+          </div>
+          <div class="form-group-inline">
+            <input
+              type="radio"
+              id="radio2"
+              formControlName="gender"
+              value="Male"
+            />
+            <label for="radio2">Male</label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button type="submit" [disabled]="signUpForm.invalid" id="button-signup">Join Us</button>
+        </div>
+        <div class="form-group text-center">
+          <button type="button" (click)="navToSignIn()">Have account</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<app-success-popup [isVisible]="showPopup" (close)="showPopup = false"></app-success-popup>

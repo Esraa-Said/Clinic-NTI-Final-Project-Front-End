@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.add-department-container {
+  max-width: 600px;
+  margin: 100px auto 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(240, 243, 252);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.add-department-container form {
+  padding: 50px;
+}
+
+.add-department-container .form-group {
+  margin-bottom: 15px;
+}
+
+.add-department-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-department-container input[type="text"],
+.add-department-container textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-department-container input[type="file"] {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.add-department-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.add-department-container .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.add-department-container img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-department-container button {
+  padding: 10px 20px;
+  background-color: #7b00ff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+.add-department-container button:disabled {
+  background-color: #ccc;
+}
+
+.add-department-container button:hover:not(:disabled) {
+  background-color: #8036d6;  transform: rotateY(45deg);
+
+}
+
+.add-department-container .is-invalid {
+  border-color: red;
+}

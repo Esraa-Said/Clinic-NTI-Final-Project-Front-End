@@ -1,0 +1,9 @@
+<div class="popup" *ngIf="showPopup">
+    <div class="popup-content">
+      <h4>Confirm Deletion</h4>
+      <p>{{ message }}</p>
+      <button id="yes" (click)="confirmDelete()">Yes</button>
+      <button id="cancel" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+  
