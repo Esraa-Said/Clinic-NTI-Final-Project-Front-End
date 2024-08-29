@@ -80,8 +80,14 @@ The Medical Appointment Booking System is a web application designed to simplify
 ## **Start the Frontend Development Server:**
 * ng serve
 
-## Access the Application:
+## **Access the Application:**
 * Open your browser and navigate to http://localhost:4200.
+
+
+## **Screenshots and Preview**
+![Home](./src/assets/preview/Home.mp4)
+
+
 
 ## Contact
 * **Esraa Said:** https://www.linkedin.com/in/esraa-said-152516249/ 
