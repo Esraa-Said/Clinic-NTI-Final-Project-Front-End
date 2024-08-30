@@ -1,18 +1,17 @@
 <div class="popup-form">
-    <form [formGroup]="statusForm" (ngSubmit)="onSubmit()">
-      <h3>Update Appointment Status</h3>
-      
+  <form [formGroup]="statusForm" (ngSubmit)="onSubmit()">
+    <div><h3>Update Appointment Status</h3></div>
+    <div>
       <label for="status">Status:</label>
       <select id="status" formControlName="status">
         <option value="Scheduled">Scheduled</option>
         <option value="Confirmed">Confirmed</option>
         <option value="Canceled">Canceled</option>
       </select>
-  
-      <div class="buttons">
-        <button type="submit">Update</button>
-        <button type="button" (click)="onCancel()">Cancel</button>
-      </div>
-    </form>
-  </div>
-  
+    </div>
+    <div class="buttons">
+      <button type="submit">Update</button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -31,6 +31,7 @@ export class DashboardDoctorComponent implements OnInit {
 
     this._appointmentsService.getDoctorsAppointmentsCounts(this.id).subscribe((data)=>{
       this.appointmentsCount = data.count;
+      console.log(data)
     })
 
   }

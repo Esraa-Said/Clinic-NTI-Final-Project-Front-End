@@ -85,7 +85,6 @@ The Medical Appointment Booking System is a web application designed to simplify
 
 
 ## **Screenshots and Preview**
-![Home](./src/assets/preview/Home.mp4)
 
 
 

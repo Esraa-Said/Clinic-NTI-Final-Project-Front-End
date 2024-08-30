@@ -36,7 +36,7 @@ export class AppointmentsService {
     return this.http.put<any>(`${this.AppointmentsUpdateUPL}/${id}`, appointment);
   }
   updateStatusAppointment(appointment: any, id: String): Observable<any> {
-    return this.http.put<any>(`${this.AppointmentsUpdateUPL}/${id}/photo`, appointment);
+    return this.http.put<any>(`${this.AppointmentsUpdateUPL}/${id}/status`, appointment);
   }
 
   AppointmentsDeleteByAppointmentId(id: String): Observable<any> {
