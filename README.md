@@ -87,7 +87,10 @@ The Medical Appointment Booking System is a web application designed to simplify
 ## **Screenshots and Preview**
 
 
-https://github.com/user-attachments/assets/1cc59008-f58a-4d79-be07-62b12808a914
+https://github.com/user-attachments/assets/427d159e-75ee-462f-b0d7-32b936a08f1e
+
+
+
 
 
 
