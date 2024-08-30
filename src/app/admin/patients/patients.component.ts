@@ -68,7 +68,7 @@ export class PatientsComponent {
     if (this.patientToDelete !== undefined) {
       let index = this.patientToDelete + (this.currentPage - 1) * this.pageSize;
 
-      this._patientsService.deletePatient(this.patients[index]).subscribe({
+      this._patientsService.deletePatient(this.patients[index]._id).subscribe({
         next: () => {
           this.showConfirmPopup = false;
           this.notificationMessage = 'Patient deleted successfully!';
